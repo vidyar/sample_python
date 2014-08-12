@@ -24,10 +24,14 @@ script:
   - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
   - echo $secret 
   - cat ~/.gitconfig
+  - echo $secret >> README.md
+
 before_archive:
-  - mv coverage.xml shippable/coverage
+  - mv README.md shippable/
+
 after_archive:
   - echo $SHIPPABLE_ARTIFACTS_URL
+
 notifications:
   email:
    - exampleone@org.com
