@@ -25,7 +25,7 @@ script:
   - echo $secret 
   - cat ~/.gitconfig
 before_archive:
-  - mv README.md shippable/
+  - mv coverage.xml shippable/coverage
 after_archive:
   - echo $SHIPPABLE_ARTIFACTS_URL
 notifications:
