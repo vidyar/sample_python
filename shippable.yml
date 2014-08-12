@@ -7,7 +7,9 @@ python:
   #- 3.3
   #- 3.4
   #- pypy
-  
+env:
+ global:
+  - secure: delZzsoRnqIRZ8OjM1mDc0Zl+IowUTGFX5kXRmnXcdtxmIgiOGg8GF0LfZHuhDnnoSA7ggOOQAmobOfrUJtFNKgxeM4J+HhPYKovOP8UdCuJgyEE1ygnW55fihgJAXbnNJ0uIAS61y9tREBR/owUQa1Q7Qu48PUeJSoIO+ngIaKb64SGwhPSVbmXp5SE+sm1MmadWt+agMOX1UTium0lnJ2SV+TZWXQ07mhaFX+9eNWnstZYeUOh94dybHFAX6zjnnJYyD419iyx6oLyyYf5E/bHGuix5XNoJgFKU1jA5FUK5tIUY9S1Q7l0IaGtU53nK8nYfd03l8AO1qGfNk2jEQ==
 install:
   - pip install -r requirements.txt
 
@@ -20,8 +22,12 @@ script:
   - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
   - which python && coverage run --branch test.py
   - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
-  - echo "test" >> README.md
+  - echo $secret >> README.md
   - cat ~/.gitconfig
+before_archive:
+  - mv README.md shippable/
+after_archive:
+  - echo $SHIPPABLE_ARTIFACTS_URL
 notifications:
   email:
    - exampleone@org.com
