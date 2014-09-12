@@ -9,7 +9,8 @@ python:
   #- pypy
 env:
  global:
-  - secure: delZzsoRnqIRZ8OjM1mDc0Zl+IowUTGFX5kXRmnXcdtxmIgiOGg8GF0LfZHuhDnnoSA7ggOOQAmobOfrUJtFNKgxeM4J+HhPYKovOP8UdCuJgyEE1ygnW55fihgJAXbnNJ0uIAS61y9tREBR/owUQa1Q7Qu48PUeJSoIO+ngIaKb64SGwhPSVbmXp5SE+sm1MmadWt+agMOX1UTium0lnJ2SV+TZWXQ07mhaFX+9eNWnstZYeUOh94dybHFAX6zjnnJYyD419iyx6oLyyYf5E/bHGuix5XNoJgFKU1jA5FUK5tIUY9S1Q7l0IaGtU53nK8nYfd03l8AO1qGfNk2jEQ==
+  - secure: nWdcKFLb3FVcPMwR1lviCGcCP1vjlspsAf7MJ3rn8GIb/d9tnAzS/Swdn1Gb/iT/sDclFZR/4OjZf6q8ZyhjUQ4B9Lvo8zlpYrIHWWqd5enltZVNdsFmquHpGEIomo6bsnAojHUuR/BJrBc0pv/YBu0YsUcvKYyAGjDOmYI3HZSXNZUjaIbLAtCTMR+EvKRs4MHDXW9xfhskf2qsToX4PnPSUKw2nj1m24NtzHoJlcIjV18juKStPuLdMdWnuXE3p1BLstBAliZVH08/wq5lUKHp9Kgh5mFESk4l3BZmRGTI9LJZlTkUlWqq3JA9h5s+2WG0jJ51FR7UeNZFmTVncw==
+  #- secure: delZzsoRnqIRZ8OjM1mDc0Zl+IowUTGFX5kXRmnXcdtxmIgiOGg8GF0LfZHuhDnnoSA7ggOOQAmobOfrUJtFNKgxeM4J+HhPYKovOP8UdCuJgyEE1ygnW55fihgJAXbnNJ0uIAS61y9tREBR/owUQa1Q7Qu48PUeJSoIO+ngIaKb64SGwhPSVbmXp5SE+sm1MmadWt+agMOX1UTium0lnJ2SV+TZWXQ07mhaFX+9eNWnstZYeUOh94dybHFAX6zjnnJYyD419iyx6oLyyYf5E/bHGuix5XNoJgFKU1jA5FUK5tIUY9S1Q7l0IaGtU53nK8nYfd03l8AO1qGfNk2jEQ==
 install:
   - pip install -r requirements.txt
 
@@ -22,16 +23,6 @@ script:
   - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
   - which python && coverage run --branch test.py
   - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
-  - echo $secret 
+  - echo $env
   - cat ~/.gitconfig
-  - echo $secret >> README.md
-
-before_archive:
-  - mv README.md shippable/
-
-after_archive:
-  - echo $SHIPPABLE_ARTIFACTS_URL
-
-notifications:
-  email:
-   - exampleone@org.com
+  
