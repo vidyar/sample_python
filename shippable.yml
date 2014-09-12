@@ -9,9 +9,9 @@ python:
   #- pypy
 env:
  global:
-  - secure: nWdcKFLb3FVcPMwR1lviCGcCP1vjlspsAf7MJ3rn8GIb/d9tnAzS/Swdn1Gb/iT/sDclFZR/4OjZf6q8ZyhjUQ4B9Lvo8zlpYrIHWWqd5enltZVNdsFmquHpGEIomo6bsnAojHUuR/BJrBc0pv/YBu0YsUcvKYyAGjDOmYI3HZSXNZUjaIbLAtCTMR+EvKRs4MHDXW9xfhskf2qsToX4PnPSUKw2nj1m24NtzHoJlcIjV18juKStPuLdMdWnuXE3p1BLstBAliZVH08/wq5lUKHp9Kgh5mFESk4l3BZmRGTI9LJZlTkUlWqq3JA9h5s+2WG0jJ51FR7UeNZFmTVncw==
-  #- secure: delZzsoRnqIRZ8OjM1mDc0Zl+IowUTGFX5kXRmnXcdtxmIgiOGg8GF0LfZHuhDnnoSA7ggOOQAmobOfrUJtFNKgxeM4J+HhPYKovOP8UdCuJgyEE1ygnW55fihgJAXbnNJ0uIAS61y9tREBR/owUQa1Q7Qu48PUeJSoIO+ngIaKb64SGwhPSVbmXp5SE+sm1MmadWt+agMOX1UTium0lnJ2SV+TZWXQ07mhaFX+9eNWnstZYeUOh94dybHFAX6zjnnJYyD419iyx6oLyyYf5E/bHGuix5XNoJgFKU1jA5FUK5tIUY9S1Q7l0IaGtU53nK8nYfd03l8AO1qGfNk2jEQ==
-install:
+  - secure: dAwoo85ZU/4xFHJ3PrH+mvBwUfYqRbINKLbO7cuYx4Dj5lNp5J4l8AjB5WVrZdtct1bKE7OXQdzotPGQc/t23rDIhplSVxCssxd9XD9L7CQ5Rqm8oGgGkEm93I0rr2xX3B05IKupmRe3PziGdpDnsT8KA/dmCrmUZAWDYFFThNM9t2THqvBgBGfCn9qIMlmQcqKCVk5WJlwWiriH5RjoYvqaZuTlYNhuAgq+RMv7qeGqIOk8qCQ9OeU1SV9Zm1mkIVZjol+4V1ABDj2RnJDF7KQY65aGdsLRSNJW+AATE8hrQ2xs4w9gnhiRa0lueqiTRjNBcv2NsTlI0J3BcxZprg==
+#  - secure: awk2WER/kS19mbG6pN4UUCg/LYgkZhUhYF0A1aoBtZUmBoe3tdtDb8tsnySjWL40IUiL9p2BnJ1TwR2dVhzc7lXH2BuLIsE83CnmOq/qB5wSEZ7s8qY0FxCp3v4ptoNmQjNceljAx91ytgzPv4Y1AkKccH68XCmktjN/1u2J+j5eSH5/MADe9PF05xO7AYK9fDbEHQ2YILtXHNyU2Hz7T/aMvjn9Nv1sohvTjba4Tf4buX7KdHFwm2fWkn4rsUSszGsqAbgIgzkH54FwiwRTspZFV2E1xoPLx0JAiFAFvhZFwpE1HoDdj3+VGs8NqO95T1rx5hFGe3On1p3mtEmkYQ==
+  install:
   - pip install -r requirements.txt
 
 # Make folders for the reports
@@ -23,6 +23,6 @@ script:
   - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
   - which python && coverage run --branch test.py
   - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
-  - echo $env
+  - echo $foo
   - cat ~/.gitconfig
   
