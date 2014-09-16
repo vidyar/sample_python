@@ -27,4 +27,4 @@ notifications:
              - buildsampletest@gmail.com
              - vidya@shippable.com
          on_success: never
-         on_failure: never
+         on_failure: always
