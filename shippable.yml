@@ -22,9 +22,4 @@ script:
   - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
   - echo $BUILD_NUMBER
 notifications:
-     email:
-         recipients:
-             - buildsampletest@gmail.com
-             - vidya@shippable.com
-         on_success: never
-         on_failure: always
+  email: false
