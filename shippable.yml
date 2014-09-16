@@ -21,3 +21,10 @@ script:
   - which python && coverage run --branch test.py
   - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
   - echo $BUILD_NUMBER
+notifications:
+     email:
+         recipients:
+             - buildsampletest@gmail.com
+             - vidya@shippable.com
+         on_success: change
+         on_failure: always
