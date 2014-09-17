@@ -24,5 +24,10 @@ script:
   - echo $BUILD_NUMBER
 
 
-notifications:  
-    email: false
+notifications:
+     email:
+         recipients:
+             - vidya@shippable.com
+             - buildsampletest@gmail.com
+         on_success: never
+         on_failure: never
