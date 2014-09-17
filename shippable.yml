@@ -25,11 +25,4 @@ script:
 
 
 notifications:  
-    email:
-         recipients:
-             - vidya@shippable.com
-             - buildsampletest@gmail.com
-             - vidyac.raghav@gmail.com
-         on_success: change
-         on_failure: always
-
+    email: false
