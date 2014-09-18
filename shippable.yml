@@ -27,3 +27,4 @@ archive: true
 
 notifications:
  email: false
+parallelized_test : true
