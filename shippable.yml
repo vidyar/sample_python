@@ -1,12 +1,12 @@
 language: python
 
 python:
- # - 2.6
- # - 2.7
+  - 2.6
+  - 2.7
   - 3.2
   - 3.3
   - 3.4
-  #- pypy
+  - pypy
 
 install:
   - pip install -r requirements.txt
@@ -25,5 +25,5 @@ script:
 
 archive: true
 
-
-#parallelized_test : true
+cache: true 
+parallelized_test : true
