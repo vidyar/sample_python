@@ -25,5 +25,5 @@ script:
 
 archive: true
 
-cache: true 
+#cache: true 
 parallelized_test : true
