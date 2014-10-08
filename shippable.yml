@@ -28,3 +28,9 @@ notifications:
              - buildsampletest@gmail.com
          on_success: change
          on_failure: always
+
+branches:
+  only:
+    - dev
+    - test-pr
+    - master
