@@ -1,13 +1,13 @@
 language: python
-build_image: shippable/minv2:beta
+#build_image: shippable/minv2:beta
 
 python:
-  - 2.6
+ # - 2.6
   - 2.7
-  - 3.2
-  - 3.3
-  - 3.4
-  - pypy
+  #- 3.2
+  #- 3.3
+  #- 3.4
+  #- pypy
 
 install:
   - pip install -r requirements.txt
