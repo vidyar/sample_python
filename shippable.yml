@@ -29,6 +29,7 @@ script:
   - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
   - echo $BUILD_NUMBER 
   - echo $BUILD_URL
+  - echo $BRANCH
 
 archive: true
 notifications:
