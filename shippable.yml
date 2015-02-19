@@ -22,6 +22,7 @@ install:
 before_script:
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
+  - git --version
 
 script:
   - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
