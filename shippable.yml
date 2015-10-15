@@ -31,7 +31,6 @@ notifications:
          on_failure: always
 
 
-
 branches:
   only:
     - dev
