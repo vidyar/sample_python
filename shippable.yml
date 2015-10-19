@@ -22,7 +22,7 @@ script:
   
   
 archive: true
-notifications
+notifications:
      email:
          recipients:
              - vidya@shippable.com
