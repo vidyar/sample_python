@@ -2,11 +2,11 @@ language: python
 
 
 python:
-  - 3.2
-  - 3.3
+ # - 3.2
+#  - 3.3
   - 3.4
-  - 2.7
-  - 2.6
+ # - 2.7
+  #- 2.6
 
 install:
   - pip install -r requirements.txt
@@ -16,6 +16,7 @@ before_script:
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
   - printenv
+  - travis_retry 'if [ $i -eq 3 ]; then echo "done"; else foobar$i; fi'
 
 script:
   - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
