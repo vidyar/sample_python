@@ -8,6 +8,7 @@ python:
   #- 3.4
   #- pypy
 env:
+ global:
  - secure: O6dIGbm1+lZkEN8ZQ3bqB2fSx/MlFguTlnkjmFtTRT4XqF87nZFmhiEXpzzSpN/+dk/qy3cwYZdeM2W3bNxicFWx3pbJZaH0NT3I+TCGSgnf4w5GRl1PVQ3/8H6LdZRWA6g6pQaE9lJ3Qr1YzasRUCuXiHYLHs187y/KLQAhnfBoUnSzXEgW5xN+BqxtMGlB6M/dzSUyDuHb5EtJDMqTYpcJ7yVOjdSy4548kJKVY5izrjuQpOztdErK/H8MFhr5Vm6rN4kbdWhOefgYPD6xihGnn/MYOJERf+nfhQXLOMNSD4ELiYF/2jEQ0FASBZuzXOfb7NJkYj5LCrN9Hw3EpQ==
  
 
