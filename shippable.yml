@@ -18,8 +18,8 @@ install:
 before_script:
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
-  - printenv
-  - travis_retry 'if [ $i -eq 3 ]; then echo "done"; else foobar$i; fi'
+ # - printenv
+  #- travis_retry 'if [ $i -eq 3 ]; then echo "done"; else foobar$i; fi'
 
 script:
   - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
