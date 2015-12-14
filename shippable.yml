@@ -11,8 +11,8 @@ python:
 - pypy3
 
 
-install:
-  - pip install -r requirements.txt
+#install:
+  #- pip install -r requirements.txt
 
 # Make folders for the reports
 before_script:
